@@ -11,7 +11,7 @@ int openPos = 90;
 int midPos = 90;
 int curPos = 90;
 int incBy = 5;
-int doorDelay = 5; // ms
+int doorDelay = 2; // ms
 bool initializationComplete = false;
 
 int PIR_GPIO = 2;
@@ -37,7 +37,7 @@ void loop() {
   if (Serial.available() > 0) {
     char command = Serial.read();
     switch (command) {
-      case 'o': // Up arrow command
+      case 'o':
         Serial.println("Opening door...");
         servoWrite(openPos);
         break;
